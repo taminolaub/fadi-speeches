@@ -13,7 +13,7 @@ class SpeechController {
     @Autowired
     private lateinit var evaluator: SpeechEvaluationService
 
-    @GetMapping("/evaluate")
+    @GetMapping("/evaluation")
     fun evaluate(@RequestParam("url") urls: Array<String>) =
         // Converts the passed list of urls to inputstreams and passes them to the service
         evaluator.evaluate(urls.map {

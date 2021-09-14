@@ -9,9 +9,9 @@ class AnalyzedFile {
             speakers.get(line.author)!! // We can use the !!-operator here since we are sure that the key exists and points to a SpeakerData-object
         } else {
             // If the speaker is unknown create a new SpeakerData object and add it to the map
-            val d = SpeakerData()
-            speakers.put(line.author, d)
-            d
+            val newSpeakerData = SpeakerData()
+            speakers.put(line.author, newSpeakerData)
+            newSpeakerData
         }
 
         // Analyze the line and add to the information contained in SpeakerData

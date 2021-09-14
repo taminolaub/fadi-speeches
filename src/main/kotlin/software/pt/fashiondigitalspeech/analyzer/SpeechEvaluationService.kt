@@ -57,7 +57,7 @@ class SpeechEvaluationService {
 
     private fun processLine (line: String) =
         line.let {
-            val parts = it.split(delimiter)
+                val parts = it.split(delimiter)
             AnalyzedLine(
                 author = parts[0].trim(),
                 topic = parts[1].trim(),
@@ -75,9 +75,9 @@ class SpeechEvaluationService {
                 val speakerData = if (map.containsKey(speaker)) {
                     map.get(speaker)!!
                 } else {
-                    val d = SpeakerData()
-                    map.put(speaker, d)
-                    d
+                    val newSpeakerData = SpeakerData()
+                    map.put(speaker, newSpeakerData)
+                    newSpeakerData
                 }
                 // Add data from the currently processed file to the authors data across all files
                 speakerData.words += data.words
